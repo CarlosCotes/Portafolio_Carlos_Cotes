@@ -2,8 +2,7 @@
     color: #e0e0e0;
     background-color: #1a1a1a;
     font-family: 'Arial', sans-serif;
-    height: 100%;
-
+    height: 99vh;
 }
 @keyframes fadeInDown {
     from {
@@ -131,46 +130,190 @@
     
     }
 }
-#info{
+
+#info {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    #info-container{
-        width: 50%;
-    }
-    #info-up-container{
-        display: flex;  
-        }
+    padding: 2rem;
 
-    #info-dowm-container{
+    #info-container {
+        width: 70%;
+        max-width: 1200px;
+        margin-bottom: 2rem;
+    }
+
+    #info-up-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #info-dowm-container {
         width: 100%;
         display: flex;
         justify-content: center;
-        .info-card-container{
-            width: 50%;
+        flex-wrap: wrap; 
+        gap: 1rem;
+
+        .info-card-container {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: flex;
+            justify-content: center;
         }
     }
-        
-        .info-card-container{
-            height: 50%;
-            display: flex;
-            margin: 1%;
 
-            .info-card-content{
-                background: linear-gradient(135deg, #000000, #960018, #000000, #5e0b1a); 
-                background-size: 300% 300%;
-                animation: gradientBG 15s ease infinite;
-                float: left;
-                padding: 1%;
-                margin: 5%;
-                border-radius: 15%;
-                box-sizing: border-box;
-                text-align: center;
-                position: relative;
-                cursor: pointer;
-            }    
+    .info-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+        text-align: center;
+
+        .info-card-content {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            padding: 1.5rem;
+            margin: 1rem;
+            border-radius: 20px; 
+            background: linear-gradient(135deg, #000000, #960018, #000000, #5e0b1a);
+            background-size: 300% 300%;
+            animation: gradientBG 15s ease infinite;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #fff;
         }
+
+        .info-card-content:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .info-card-content:hover h3 {
+            color: #000000;
+        }
+
+        .info-card-content p {
+            font-size: 1rem;
+            line-height: 1.5;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .info-card-content:hover p {
+            opacity: 1;
+        }
+
+        .info-card-content img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card-content:hover img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+#projects-section {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    align-items: center;
+    .project-title {
+        font-size: 1.5rem;
+        color: #fff;
+        margin: 0 0 1rem 0;
+        transition: color 0.3s ease;
+    }
+
+    .project-card:hover .project-title {
+        color: #000000;
+    }
+
+    #projects-cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .project-card {
+            border-radius: 10px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #000000, #960018, #000000, #5e0b1a);
+            background-size: 300% 300%;
+            animation: gradientBG 15s ease infinite;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-description {
+            opacity: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: #e9ecef;
+            color: #960018;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            transform: scale(1.1);
+            background: #960018;
+            color: #fff;
+        }
+    }
 }
 
 
@@ -180,7 +323,7 @@
     align-items: center;
     flex-direction: column;
 
-    #container-contact {
+    #contact-section {
         display: flex;
         flex-direction: row;
         width: 25%;
@@ -191,19 +334,27 @@
         align-items: center;
         width: 20%;
         padding: 5%;
-        border-radius: 5%;
-        margin: 10px;
+        border-radius: 15%;
+        margin: 2%;
         background: linear-gradient(135deg, #000000, #960018, #000000, #5e0b1a); 
         background-size: 300% 300%;
         animation: gradientBG 15s ease infinite;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
     }
-    
+    .content-contact:hover {
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(135deg, #960018, #5e0b1a, #960018, #000000);
+    }
     
     .content-contact img {
         width: 100%; 
         height: auto;
-    
-    } 
-    
+        transition: transform 0.3s ease;
+    }
+    .content-contact:hover img {
+        transform: scale(1.2) rotate(5deg);
+    }
 }
-
